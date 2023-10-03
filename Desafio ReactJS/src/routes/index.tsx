@@ -1,7 +1,10 @@
-import {} from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
 
 export function Routes() {
-  const appRoutes;
+  const appRoutes = createBrowserRouter([
+    { path: '/', element: <></> },
+    { path: '/' },
+  ]);
 
   return <></>;
 }
