@@ -21,5 +21,19 @@ export const Container = styled.header`
     display: flex;
     align-items: center;
     gap: 0.5rem;
+
+    line-height: normal;
+
+    .description {
+      font-size: 0.875rem;
+    }
+
+    .count {
+      font-size: 0.75rem;
+    }
+
+    svg {
+      font-size: 2rem;
+    }
   }
 `;

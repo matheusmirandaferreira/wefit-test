@@ -1,4 +1,4 @@
-import { ShoppingBasketOutlined } from '@mui/icons-material';
+import { ShoppingBasket } from '@mui/icons-material';
 import * as S from './styles';
 
 export function Header() {
@@ -10,7 +10,7 @@ export function Header() {
           <p className='description'>Meu carrinho</p>
           <div className='count'>0 itens</div>
         </div>
-        <ShoppingBasketOutlined />
+        <ShoppingBasket />
       </div>
     </S.Container>
   );
