@@ -1,39 +1,45 @@
-import { styled } from 'styled-components';
+import { css, styled } from 'styled-components';
 
 export const Container = styled.header`
-  width: 100%;
-  max-width: 960px;
-  margin: 0 auto;
+  ${({ theme }) => css`
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
 
-  padding: 1.125rem 0.625rem;
+    padding: 1.125rem 0.625rem;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  color: ${({ theme }) => theme.white};
-
-  h2.title {
-    font-size: 1.25rem;
-  }
-
-  .cart-menu {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: space-between;
 
-    line-height: normal;
+    color: ${theme.white};
 
-    .description {
-      font-size: 0.875rem;
+    h2.title {
+      font-size: 1.25rem;
     }
 
-    .count {
-      font-size: 0.75rem;
-    }
+    .cart-menu {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-align: right;
 
-    svg {
-      font-size: 2rem;
+      line-height: normal;
+
+      .description {
+        font-size: 0.875rem;
+      }
+
+      .count {
+        font-size: 0.75rem;
+        color: ${theme.gray};
+        font-weight: 600;
+        line-height: normal;
+      }
+
+      svg {
+        font-size: 2rem;
+      }
     }
-  }
+  `};
 `;
