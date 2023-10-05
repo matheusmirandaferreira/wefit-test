@@ -1,4 +1,4 @@
-import { css, styled } from 'styled-components';
+import { css, styled } from "styled-components";
 
 export const Container = styled.header`
   ${({ theme }) => css`
@@ -16,6 +16,7 @@ export const Container = styled.header`
 
     h2.title {
       font-size: 1.25rem;
+      font-weight: 700;
     }
 
     .cart-menu {
@@ -40,6 +41,10 @@ export const Container = styled.header`
       svg {
         font-size: 2rem;
       }
+    }
+
+    @media (max-with: 500px) {
+      padding: 1.125rem 0.625rem;
     }
   `};
 `;

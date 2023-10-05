@@ -1,35 +1,33 @@
-import axios from 'axios';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from "react";
 
-import { Loader } from '../../components/Loader';
-import { MovieCard } from '../../components/MovieCard';
-import { PageWrapper } from '../../components/PageWrapper';
+import { Loader } from "../../components/Loader";
+import { MovieCard } from "../../components/MovieCard";
+import { PageWrapper } from "../../components/PageWrapper";
 
-import { MovieProps } from '../../types/movie';
+import { MovieProps } from "../../types/movie";
+import { getMovies } from "../../services/movies";
 
-import * as S from './styles';
-
-type MoviesResponse = {
-  products: MovieProps[];
-};
+import * as S from "./styles";
 
 export function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [data, setData] = useState<MovieProps[]>([]);
 
   const loadMovies = useCallback(async () => {
-    setError('');
+    setError("");
     setIsLoading(true);
     try {
-      const response = await axios.get<MoviesResponse>('../../../server.json');
+      const response = await getMovies();
 
-      setData(response.data.products);
+      setData(response);
     } catch (err) {
-      setError('Ocorreu um erro ao carregar seus dados.');
+      setError("Ocorreu um erro ao carregar seus dados.");
     } finally {
-      setIsLoading(false);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 1500);
     }
   }, []);
 
